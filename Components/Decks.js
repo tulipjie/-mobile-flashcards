@@ -4,14 +4,20 @@
 import React,{Component} from 'react';
 import {View,Text,StyleSheet} from 'react-native';
 import {gray} from '../utils/colors';
-
+import UnitCard from './UnitCard';
+import TextButton from './TextButton';
+import {getDecks} from '../utils/api';
 class Decks extends Component {
+
     render(){
         return (
             <View style={styles.container}>
                 <Text style={{height:20}}/>
-                <Text style={{fontSize:35}}>udacicards</Text>
+                <TextButton style={{fontSize:35}} onPress={()=>this.props.navigation.navigate(
+                    'UnitCard'
+                )} >deck</TextButton>
                 <Text style={styles.numberText}>3 cards</Text>
+                <Text>{JSON.stringify(this.props)}</Text>
             </View>
         )
     }

@@ -14,8 +14,12 @@ class UnitCard extends Component{
                <Text style={{fontSize:70}}>udacicards</Text>
                <Text style={styles.numberText}>3 cards</Text>
                <Text style={{height:200}}/>
-               <SubmitButton>Add Card</SubmitButton>
-               <SubmitButton style={styles.quizBtn}>Start Quiz</SubmitButton>
+               <SubmitButton onPress={()=>this.props.navigation.navigate(
+                   'AddCard'
+               )}>Add Card</SubmitButton>
+               <SubmitButton style={styles.quizBtn} onPress={()=>this.props.navigation.navigate(
+                   'Quiz'
+               )}>Start Quiz</SubmitButton>
            </View>
         )
     }
